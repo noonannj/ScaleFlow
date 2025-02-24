@@ -91,7 +91,37 @@
         flex: 1 1 100%;
       }
     }
-    /* Image styles for visual samples */
+    /* Styles for Instagram Post Example */
+    .insta-post {
+      border: 1px solid #ddd;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .insta-header {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+    }
+    .insta-profile {
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+    .insta-username {
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .insta-image {
+      width: 100%;
+      display: block;
+    }
+    .insta-caption {
+      padding: 10px;
+      font-size: 14px;
+    }
+    /* Image styles for other visual samples */
     .sample-card img {
       width: 100%;
       border-radius: 5px;
@@ -124,17 +154,25 @@
   <div class="section">
     <h2>See Our Work in Action</h2>
     <div class="samples-container">
-      <!-- Instagram Post Example -->
+      <!-- Instagram Post Example Card -->
       <div class="sample-card">
-        <h3>Instagram Post Example</h3>
-        <img src="https://via.placeholder.com/300x300?text=Instagram+Post" alt="Instagram Post Example">
+        <div class="insta-post">
+          <div class="insta-header">
+            <img src="https://via.placeholder.com/40?text=SF" alt="ScaleFlow Profile" class="insta-profile">
+            <span class="insta-username">@ScaleFlow</span>
+          </div>
+          <img src="https://via.placeholder.com/400x400?text=Instagram+Post+Example" alt="Instagram Post Example" class="insta-image">
+          <div class="insta-caption">
+            <p>Our latest content strategy in action! Bringing your e-commerce brand to life with AI-driven creativity. #ScaleFlow #ContentThatConverts #EcommerceSuccess</p>
+          </div>
+        </div>
       </div>
-      <!-- Instagram Story Example -->
+      <!-- Instagram Story Example Card -->
       <div class="sample-card">
         <h3>Instagram Story Example</h3>
         <img src="https://via.placeholder.com/300x300?text=Instagram+Story" alt="Instagram Story Example">
       </div>
-      <!-- Video Content Example -->
+      <!-- Video Content Example Card -->
       <div class="sample-card">
         <h3>Video Content Example</h3>
         <div class="video-container">
