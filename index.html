@@ -91,6 +91,26 @@
         flex: 1 1 100%;
       }
     }
+    /* Image styles for visual samples */
+    .sample-card img {
+      width: 100%;
+      border-radius: 5px;
+    }
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 5px;
+    }
   </style>
 </head>
 <body>
@@ -104,20 +124,24 @@
   <div class="section">
     <h2>See Our Work in Action</h2>
     <div class="samples-container">
-      <!-- Blog Sample Card -->
+      <!-- Instagram Post Example -->
       <div class="sample-card">
-        <h3>Blog Sample: 5 Strategies to Transform Your E-commerce Content</h3>
-        <p>"Discover how leveraging AI-driven content can boost your store's conversion rates, streamline your operations, and drive sustainable growth. Explore proven strategies that top e-commerce brands use to captivate audiences and outperform the competition."</p>
+        <h3>Instagram Post Example</h3>
+        <img src="https://via.placeholder.com/300x300?text=Instagram+Post" alt="Instagram Post Example">
       </div>
-      <!-- Ad Copy Sample Card -->
+      <!-- Instagram Story Example -->
       <div class="sample-card">
-        <h3>Ad Copy Sample</h3>
-        <p>"Elevate your e-commerce success with ScaleFlow's AI-powered content. Boost your brand’s voice, captivate your audience, and drive conversions—starting at just $99/mo. Try our free trial today!"</p>
+        <h3>Instagram Story Example</h3>
+        <img src="https://via.placeholder.com/300x300?text=Instagram+Story" alt="Instagram Story Example">
       </div>
-      <!-- Social Post Sample Card -->
+      <!-- Video Content Example -->
       <div class="sample-card">
-        <h3>Social Post Sample</h3>
-        <p>"Your e-commerce brand deserves content that converts. With ScaleFlow, get high-quality AI-driven blogs, ads, and social posts that drive sales. #ScaleFlow #Ecommerce #ContentThatConverts"</p>
+        <h3>Video Content Example</h3>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+        </div>
       </div>
     </div>
   </div>
