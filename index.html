@@ -17,35 +17,38 @@
       color: #4CAF50;
       text-decoration: none;
     }
-    /* Hero Section with Background Image */
-    .hero {
-      position: relative;
-      background: url('https://via.placeholder.com/1920x600?text=Our+Services') no-repeat center center/cover;
-      height: 600px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+    /* Header Section (smaller, solid green) */
+    .header {
+      background-color: #4CAF50;
       color: white;
+      text-align: center;
+      padding: 10px 20px;
+      height: 150px; /* ~1/8th of a typical page height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      right: 0; bottom: 0;
-      background: rgba(0,0,0,0.5);
-    }
-    .hero div {
-      position: relative;
-      z-index: 1;
-    }
-    .hero h1 {
-      font-size: 64px;
+    .header h1 {
       margin: 0;
+      font-size: 36px;
     }
-    .hero p {
-      font-size: 28px;
-      margin-top: 10px;
+    .header p {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+    /* Integrated Services Navigation */
+    .services-nav {
+      margin-top: 5px;
+    }
+    .services-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: inline-flex;
+    }
+    .services-nav li {
+      margin: 0 10px;
+      font-size: 14px;
     }
     /* Section Styles */
     .section {
@@ -147,6 +150,9 @@
       .sample-card, .pricing-card {
         flex: 1 1 100%;
       }
+      .services-nav ul {
+        flex-direction: column;
+      }
     }
     /* AI Content Generator Section */
     .generator-section {
@@ -200,11 +206,18 @@
   </style>
 </head>
 <body>
-  <!-- Hero Section with Background Image -->
-  <div class="hero">
-    <div>
-      <h1>ScaleFlow</h1>
-      <p>Effortless Content. Limitless Growth.</p>
+  <!-- Header Section (Smaller, solid green, with services nav) -->
+  <div class="header">
+    <h1>ScaleFlow</h1>
+    <p>Effortless Content. Limitless Growth.</p>
+    <div class="services-nav">
+      <ul>
+        <li>Blogs</li>
+        <li>Social Media Posts</li>
+        <li>Product Descriptions</li>
+        <li>Ad Copy</li>
+        <li>Email Marketing</li>
+      </ul>
     </div>
   </div>
 
@@ -240,18 +253,6 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- Our Services Section -->
-  <div class="section services">
-    <h2>Our Services</h2>
-    <ul>
-      <li>Blogs</li>
-      <li>Social Media Posts</li>
-      <li>Product Descriptions</li>
-      <li>Ad Copy</li>
-      <li>Email Marketing</li>
-    </ul>
   </div>
 
   <!-- Pricing Tiers Section -->
@@ -329,27 +330,39 @@
   <script>
     async function generateText() {
       const prompt = document.getElementById('textPrompt').value;
-      const response = await fetch('/generate-text', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt })
-      });
-      const data = await response.json();
-      document.getElementById('generatedText').innerText = data.text || data.error;
+      try {
+        const response = await fetch('/generate-text', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prompt })
+        });
+        const data = await response.json();
+        if(data.text) {
+          document.getElementById('generatedText').innerText = data.text;
+        } else {
+          document.getElementById('generatedText').innerText = "Error: " + data.error;
+        }
+      } catch (error) {
+        document.getElementById('generatedText').innerText = "Request failed: " + error.message;
+      }
     }
     
     async function generateImage() {
       const prompt = document.getElementById('imagePrompt').value;
-      const response = await fetch('/generate-image', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt })
-      });
-      const data = await response.json();
-      if(data.image_url) {
-        document.getElementById('generatedImage').src = data.image_url;
-      } else {
-        document.getElementById('generatedImage').alt = data.error;
+      try {
+        const response = await fetch('/generate-image', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prompt })
+        });
+        const data = await response.json();
+        if(data.image_url) {
+          document.getElementById('generatedImage').src = data.image_url;
+        } else {
+          document.getElementById('generatedImage').alt = "Error: " + data.error;
+        }
+      } catch (error) {
+        document.getElementById('generatedImage').alt = "Request failed: " + error.message;
       }
     }
   </script>
