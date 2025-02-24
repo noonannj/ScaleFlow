@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ScaleFlow - Effortless Content. Limitless Growth.</title>
   <style>
     /* Global Styles */
@@ -11,9 +11,12 @@
       margin: 0; 
       padding: 0; 
       color: #333;
+      background-color: #f9f9f9;
     }
-    a { color: #4CAF50; text-decoration: none; }
-    
+    a { 
+      color: #4CAF50; 
+      text-decoration: none; 
+    }
     /* Hero Section */
     .hero {
       background-color: #4CAF50;
@@ -21,10 +24,15 @@
       text-align: center;
       padding: 50px 20px;
     }
-    .hero h1 { font-size: 48px; margin: 0; }
-    .hero p { font-size: 24px; margin-top: 10px; }
-    
-    /* Section Common Styles */
+    .hero h1 { 
+      font-size: 48px; 
+      margin: 0; 
+    }
+    .hero p { 
+      font-size: 24px; 
+      margin-top: 10px; 
+    }
+    /* Section Styles */
     .section {
       padding: 40px 20px;
     }
@@ -32,27 +40,34 @@
       color: #4CAF50;
       font-size: 32px;
       margin-bottom: 20px;
+      border-bottom: 2px solid #4CAF50;
+      padding-bottom: 5px;
     }
-    
-    /* Visual Samples Section */
-    .visuals {
+    /* Card Layout for Samples */
+    .samples-container {
       display: flex;
-      justify-content: space-around;
       flex-wrap: wrap;
+      gap: 20px;
     }
-    .visuals .sample {
-      border: 3px solid #4CAF50;
-      width: 250px;
-      height: 150px;
-      margin: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      color: #333;
+    .sample-card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      flex: 1 1 calc(33% - 20px);
+      box-sizing: border-box;
     }
-    
-    /* Services and Pricing */
+    .sample-card h3 {
+      margin-top: 0;
+      color: #4CAF50;
+      font-size: 20px;
+    }
+    .sample-card p {
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    /* List styles for Services and Pricing */
     .services ul, .pricing ul {
       list-style: none;
       padding: 0;
@@ -61,14 +76,21 @@
       font-size: 20px;
       margin: 10px 0;
     }
-    
     /* Contact Section */
     .contact {
       text-align: center;
       padding: 40px 20px;
       background-color: #f2f2f2;
     }
-    .contact p { font-size: 20px; }
+    .contact p { 
+      font-size: 20px; 
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .sample-card {
+        flex: 1 1 100%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -78,17 +100,29 @@
     <p>Effortless Content. Limitless Growth.</p>
   </div>
 
-  <!-- Visual Content Samples -->
-  <div class="section visuals-section">
+  <!-- See Our Work in Action Section -->
+  <div class="section">
     <h2>See Our Work in Action</h2>
-    <div class="visuals">
-      <div class="sample">Blog Sample</div>
-      <div class="sample">Ad Copy</div>
-      <div class="sample">Social Post</div>
+    <div class="samples-container">
+      <!-- Blog Sample Card -->
+      <div class="sample-card">
+        <h3>Blog Sample: 5 Strategies to Transform Your E-commerce Content</h3>
+        <p>"Discover how leveraging AI-driven content can boost your store's conversion rates, streamline your operations, and drive sustainable growth. Explore proven strategies that top e-commerce brands use to captivate audiences and outperform the competition."</p>
+      </div>
+      <!-- Ad Copy Sample Card -->
+      <div class="sample-card">
+        <h3>Ad Copy Sample</h3>
+        <p>"Elevate your e-commerce success with ScaleFlow's AI-powered content. Boost your brand’s voice, captivate your audience, and drive conversions—starting at just $99/mo. Try our free trial today!"</p>
+      </div>
+      <!-- Social Post Sample Card -->
+      <div class="sample-card">
+        <h3>Social Post Sample</h3>
+        <p>"Your e-commerce brand deserves content that converts. With ScaleFlow, get high-quality AI-driven blogs, ads, and social posts that drive sales. #ScaleFlow #Ecommerce #ContentThatConverts"</p>
+      </div>
     </div>
   </div>
 
-  <!-- Services Section -->
+  <!-- Our Services Section -->
   <div class="section services">
     <h2>Our Services</h2>
     <ul>
@@ -100,7 +134,7 @@
     </ul>
   </div>
 
-  <!-- Pricing Section -->
+  <!-- Pricing Tiers Section -->
   <div class="section pricing">
     <h2>Pricing Tiers</h2>
     <ul>
@@ -110,13 +144,26 @@
     </ul>
   </div>
 
-  <!-- Additional Content Samples -->
-  <div class="section visuals-section">
+  <!-- Additional Content Samples Section -->
+  <div class="section">
     <h2>Content Samples</h2>
-    <div class="visuals">
-      <div class="sample">Sample 1</div>
-      <div class="sample">Sample 2</div>
-      <div class="sample">Sample 3</div>
+    <div class="samples-container">
+      <!-- Content Sample 1: Product Description -->
+      <div class="sample-card">
+        <h3>Product Description: LuxeLeather Backpack</h3>
+        <p>"Introducing the LuxeLeather Backpack – where style meets functionality. Crafted from premium leather, this backpack features multiple compartments, an ergonomic design, and a sleek look to elevate your everyday carry. Perfect for professionals and adventurers alike."</p>
+      </div>
+      <!-- Content Sample 2: Promotional Email Snippet -->
+      <div class="sample-card">
+        <h3>Promotional Email Snippet</h3>
+        <p><strong>Subject:</strong> Unlock Exclusive Savings – Your VIP Offer Inside!</p>
+        <p>"Dear Customer, we're excited to offer you an exclusive 20% discount on our latest collection. Shop now and experience the perfect blend of style and innovation. Hurry—this offer is available for a limited time only!"</p>
+      </div>
+      <!-- Content Sample 3: Blog Excerpt -->
+      <div class="sample-card">
+        <h3>Blog Excerpt: Navigating the Future of E-commerce</h3>
+        <p>"The digital marketplace is evolving rapidly, and staying ahead means embracing new trends. From AI-powered recommendations to seamless checkout experiences, discover the innovations that are reshaping how consumers shop online."</p>
+      </div>
     </div>
   </div>
 
@@ -124,7 +171,7 @@
   <div class="contact">
     <h2>Get Started Today!</h2>
     <p>Contact us at: <a href="mailto:contact@scaleflow.com">contact@scaleflow.com</a></p>
-    <p>Or sign up using our online form.</p>
+    <p>Or sign up using our website form.</p>
   </div>
 </body>
 </html>
