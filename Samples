@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ScaleFlow - Work Samples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .section h2 {
+      color: #4CAF50;
+      font-size: 32px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #4CAF50;
+      padding-bottom: 5px;
+    }
+    .samples-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .sample-card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      flex: 1 1 calc(33% - 20px);
+      box-sizing: border-box;
+    }
+    .sample-card h3 {
+      margin-top: 0;
+      color: #4CAF50;
+      font-size: 20px;
+    }
+    .sample-card p {
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    /* Responsive styling */
+    @media (max-width: 768px) {
+      .sample-card {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- See Our Work in Action Section -->
+  <div class="section">
+    <h2>See Our Work in Action</h2>
+    <div class="samples-container">
+      <!-- Blog Sample -->
+      <div class="sample-card">
+        <h3>Blog Sample: 5 Strategies to Transform Your E-commerce Content</h3>
+        <p>"Discover how leveraging AI-driven content can boost your store's conversion rates, streamline your operations, and drive sustainable growth. Explore proven strategies that top e-commerce brands use to captivate audiences and outperform the competition."</p>
+      </div>
+      <!-- Ad Copy Sample -->
+      <div class="sample-card">
+        <h3>Ad Copy Sample</h3>
+        <p>"Elevate your e-commerce success with ScaleFlow's AI-powered content. Boost your brand’s voice, captivate your audience, and drive conversions—starting at just $99/mo. Try our free trial today!"</p>
+      </div>
+      <!-- Social Post Sample -->
+      <div class="sample-card">
+        <h3>Social Post Sample</h3>
+        <p>"Your e-commerce brand deserves content that converts. With ScaleFlow, get high-quality AI-driven blogs, ads, and social posts that drive sales. #ScaleFlow #Ecommerce #ContentThatConverts"</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Additional Content Samples Section -->
+  <div class="section">
+    <h2>Content Samples</h2>
+    <div class="samples-container">
+      <!-- Content Sample 1: Product Description -->
+      <div class="sample-card">
+        <h3>Product Description: LuxeLeather Backpack</h3>
+        <p>"Introducing the LuxeLeather Backpack – where style meets functionality. Crafted from premium leather, this backpack features multiple compartments, an ergonomic design, and a sleek look to elevate your everyday carry. Perfect for professionals and adventurers alike."</p>
+      </div>
+      <!-- Content Sample 2: Promotional Email Snippet -->
+      <div class="sample-card">
+        <h3>Promotional Email Snippet</h3>
+        <p><strong>Subject:</strong> Unlock Exclusive Savings – Your VIP Offer Inside!</p>
+        <p>"Dear Customer, we're excited to offer you an exclusive 20% discount on our latest collection. Shop now and experience the perfect blend of style and innovation. Hurry—this offer is available for a limited time only!"</p>
+      </div>
+      <!-- Content Sample 3: Blog Excerpt -->
+      <div class="sample-card">
+        <h3>Blog Excerpt: Navigating the Future of E-commerce</h3>
+        <p>"The digital marketplace is evolving rapidly, and staying ahead means embracing new trends. From AI-powered recommendations to seamless checkout experiences, discover the innovations that are reshaping how consumers shop online."</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
