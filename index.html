@@ -6,31 +6,46 @@
   <title>ScaleFlow - Effortless Content. Limitless Growth.</title>
   <style>
     /* Global Styles */
-    body { 
-      font-family: Arial, sans-serif; 
-      margin: 0; 
-      padding: 0; 
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
       color: #333;
       background-color: #f9f9f9;
     }
-    a { 
-      color: #4CAF50; 
-      text-decoration: none; 
+    a {
+      color: #4CAF50;
+      text-decoration: none;
     }
-    /* Hero Section */
+    /* Hero Section with Background Image */
     .hero {
-      background-color: #4CAF50;
-      color: white;
+      position: relative;
+      background: url('https://via.placeholder.com/1920x600?text=Our+Services') no-repeat center center/cover;
+      height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 50px 20px;
+      color: white;
     }
-    .hero h1 { 
-      font-size: 48px; 
-      margin: 0; 
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
     }
-    .hero p { 
-      font-size: 24px; 
-      margin-top: 10px; 
+    .hero div {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 64px;
+      margin: 0;
+    }
+    .hero p {
+      font-size: 28px;
+      margin-top: 10px;
     }
     /* Section Styles */
     .section {
@@ -43,13 +58,13 @@
       border-bottom: 2px solid #4CAF50;
       padding-bottom: 5px;
     }
-    /* Card Layout for Samples */
-    .samples-container {
+    /* Card Layout for Samples and Pricing */
+    .samples-container, .pricing-container {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
     }
-    .sample-card {
+    .sample-card, .pricing-card {
       background-color: #fff;
       border: 1px solid #ddd;
       border-radius: 5px;
@@ -58,40 +73,30 @@
       flex: 1 1 calc(33% - 20px);
       box-sizing: border-box;
     }
-    .sample-card h3 {
+    .sample-card h3, .pricing-card h3 {
       margin-top: 0;
       color: #4CAF50;
       font-size: 20px;
     }
-    .sample-card p {
+    .sample-card p, .pricing-card p {
       line-height: 1.6;
       font-size: 16px;
     }
-    /* List styles for Services and Pricing */
-    .services ul, .pricing ul {
-      list-style: none;
-      padding: 0;
+    /* Pricing Cards Button */
+    .pricing-card a.button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
     }
-    .services li, .pricing li {
-      font-size: 20px;
-      margin: 10px 0;
+    .pricing-card a.button:hover {
+      background-color: #45a049;
     }
-    /* Contact Section */
-    .contact {
-      text-align: center;
-      padding: 40px 20px;
-      background-color: #f2f2f2;
-    }
-    .contact p { 
-      font-size: 20px; 
-    }
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .sample-card {
-        flex: 1 1 100%;
-      }
-    }
-    /* Styles for Instagram Post Example */
+    /* Instagram Post Styles */
     .insta-post {
       border: 1px solid #ddd;
       background: #fff;
@@ -121,11 +126,7 @@
       padding: 10px;
       font-size: 14px;
     }
-    /* Image styles for other visual samples */
-    .sample-card img {
-      width: 100%;
-      border-radius: 5px;
-    }
+    /* Video Container */
     .video-container {
       position: relative;
       width: 100%;
@@ -141,7 +142,13 @@
       border: none;
       border-radius: 5px;
     }
-    /* AI Content Generator Section Styles */
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .sample-card, .pricing-card {
+        flex: 1 1 100%;
+      }
+    }
+    /* AI Content Generator Section */
     .generator-section {
       margin: 40px 20px;
       padding: 20px;
@@ -181,40 +188,51 @@
       max-width: 100%;
       border-radius: 5px;
     }
+    /* Contact Section */
+    .contact {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #f2f2f2;
+    }
+    .contact p {
+      font-size: 20px;
+    }
   </style>
 </head>
 <body>
-  <!-- Hero Section -->
+  <!-- Hero Section with Background Image -->
   <div class="hero">
-    <h1>ScaleFlow</h1>
-    <p>Effortless Content. Limitless Growth.</p>
+    <div>
+      <h1>ScaleFlow</h1>
+      <p>Effortless Content. Limitless Growth.</p>
+    </div>
   </div>
 
   <!-- See Our Work in Action Section -->
   <div class="section">
     <h2>See Our Work in Action</h2>
     <div class="samples-container">
-      <!-- Instagram Post Example Card -->
+      <!-- Example: Instagram Post -->
       <div class="sample-card">
         <div class="insta-post">
           <div class="insta-header">
             <img src="https://via.placeholder.com/40?text=SF" alt="ScaleFlow Profile" class="insta-profile">
             <span class="insta-username">@ScaleFlow</span>
           </div>
-          <img src="https://via.placeholder.com/400x400?text=Instagram+Post+Example" alt="Instagram Post Example" class="insta-image">
+          <img src="https://via.placeholder.com/400x400?text=Real+Instagram+Post" alt="Instagram Post Example" class="insta-image">
           <div class="insta-caption">
-            <p>Our latest content strategy in action! Bringing your e-commerce brand to life with AI-driven creativity. #ScaleFlow #ContentThatConverts #EcommerceSuccess</p>
+            <p>Experience our AI-driven creativity! Our content strategy brings e-commerce brands to life. #ScaleFlow #ContentThatConverts</p>
           </div>
         </div>
       </div>
-      <!-- Instagram Story Example Card -->
+      <!-- Example: Instagram Story -->
       <div class="sample-card">
-        <h3>Instagram Story Example</h3>
-        <img src="https://via.placeholder.com/300x300?text=Instagram+Story" alt="Instagram Story Example">
+        <h3>Instagram Story</h3>
+        <img src="https://via.placeholder.com/300x600?text=Real+Instagram+Story" alt="Instagram Story Example">
       </div>
-      <!-- Video Content Example Card -->
+      <!-- Example: Short Film -->
       <div class="sample-card">
-        <h3>Video Content Example</h3>
+        <h3>Short Film</h3>
         <div class="video-container">
           <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -239,11 +257,26 @@
   <!-- Pricing Tiers Section -->
   <div class="section pricing">
     <h2>Pricing Tiers</h2>
-    <ul>
-      <li><strong>Starter – $99/mo:</strong> 7 pieces of content</li>
-      <li><strong>Growth – $299/mo:</strong> 25 pieces + 2 ad copy pieces</li>
-      <li><strong>Scale – $599/mo:</strong> 60 pieces + 5 ad copy pieces + email marketing</li>
-    </ul>
+    <div class="pricing-container">
+      <div class="pricing-card">
+        <h3>Starter Plan</h3>
+        <p>$99/month</p>
+        <p>7 pieces of content</p>
+        <a class="button" href="https://buy.scaleflow.com/starter" target="_blank">Get Started</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Growth Plan</h3>
+        <p>$299/month</p>
+        <p>25 pieces + 2 ad copy pieces</p>
+        <a class="button" href="https://buy.scaleflow.com/growth" target="_blank">Boost Your Growth</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Scale Plan</h3>
+        <p>$599/month</p>
+        <p>60 pieces + 5 ad copy pieces + email marketing</p>
+        <a class="button" href="https://buy.scaleflow.com/scale" target="_blank">Go Big</a>
+      </div>
+    </div>
   </div>
 
   <!-- Additional Content Samples Section -->
